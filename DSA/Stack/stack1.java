@@ -1,0 +1,54 @@
+//+++++++++++++++++++++++++++++++ IMPLEMENTATION OF STACK USING ARRAYLIST ++++++++++++++++++++++++++++
+import java.util.ArrayList;
+
+public class stack1{
+    static class Stack{
+        static ArrayList<Integer> list = new ArrayList<>();
+
+        //++++++++++++++++ function to check whether stack is empty or not ++++++++++++++
+        
+        public static boolean isEmpty(){
+            return list.size()==0;
+        }
+
+        //++++++++++++++++ function to push a element in stack ++++++++++++++
+
+        public static void push(int data){
+            list.add(data);
+        }
+
+        //++++++++++++++++ function to pop a element from stack ++++++++++++++
+
+        public static int pop(){
+            if(isEmpty()){
+                return Integer.MIN_VALUE;
+            }
+            int top=list.get(list.size()-1);
+            list.remove(list.size()-1);
+            return top;
+        }
+
+        //++++++++++++++++ function to peek a element from stack ++++++++++++++
+
+        public static int peek(){
+            if(isEmpty()){
+                return Integer.MIN_VALUE;
+            }
+            return list.get(list.size()-1);
+        }
+
+    }
+
+    public static void main(String args[]){
+        Stack s = new Stack();
+        s.push(1);
+        s.push(2);
+        s.push(3);
+
+        while(!s.isEmpty()){
+            System.out.println(s.peek());
+            s.pop();
+        }
+
+    }
+}
