@@ -1,22 +1,34 @@
-public class stack8{
-    public static int nextGreater(int arr[]){
-        for(int i=0; i<arr.length; i++){
-            for(int j=i+1; j<arr.length; j++){
-                if(arr[i]<arr[j]){
-                    arr[i]=arr[j];
-                    return;
-                }
-            }
-        }
-    }
-    
-    public static void main(String args[]){
-        int arr[]={6,8,0,1,3};
-        nextGreater(arr);
 
-        for(int i=0; i<arr.length; i++){
-            System.out.println(arr[i]);
+// Find Next greater element from an array 
+
+// Time complexity =O(n)
+
+import java.util.*;
+public class stack8{
+    public static void main(String args[]){
+        int arr[]={6,8,1,0,3};
+        int nxtgreater[]= new int[arr.length];
+        Stack<Integer> s= new Stack<>();
+
+        for(int i=arr.length-1; i>=0; i--){
+            while(!s.isEmpty() && arr[s.peek()]<arr[i]){
+            s.pop();
         }
+
+        if(s.isEmpty()){
+            nxtgreater[i]=-1;
+        }
+        else{
+            nxtgreater[i]=arr[s.peek()];
+        }
+        s.push(i);
+
     }
-   
+
+
+      for(int i=0; i<nxtgreater.length; i++){
+            System.out.print(nxtgreater[i]+ " ");
+        }
+        System.out.println();
+    }
 }
