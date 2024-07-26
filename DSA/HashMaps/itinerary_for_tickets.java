@@ -27,7 +27,6 @@ public class itinerary_for_tickets {
         tickets.put("chennai", "Bengaluru");
         tickets.put("mumbai", "Delhi");
         tickets.put("Goa", "chennai");
-        tickets.put("Delhi", "Goa");
 
         // Find the starting point of the itinerary
         String start = starting_point(tickets);
