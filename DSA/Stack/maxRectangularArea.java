@@ -5,7 +5,7 @@
 
 import java.util.*;
 
-public class stack11 {
+public class maxRectangularArea {
     public static void maxArea(int arr[]) {
         Stack<Integer> s = new Stack<>();
         int maxArea = 0;
